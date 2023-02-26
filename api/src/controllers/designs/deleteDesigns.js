@@ -4,12 +4,12 @@ module.exports = async (req, res) => {
   try {
     const { id } = req.params;
 
-    let updated = await Design.update(req.body, {
+    let deleted = await Design.destroy({
       where: { id },
     });
 
-    updated
-      ? res.send(`update successfully in design with id ${id}`)
+    deleted
+      ? res.send(`design deleted successfully`)
       : res.status(500).send("db error");
   } catch (error) {
     console.log(error);
