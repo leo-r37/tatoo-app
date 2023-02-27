@@ -43,8 +43,8 @@ const { Design, Tag, User } = sequelize.models;
 Design.belongsToMany(Tag, { through: "designTag" });
 Tag.belongsToMany(Design, { through: "designTag" });
 
-User.belongsToMany(Design, { through: "favorite" });
-Design.belongsToMany(User, { through: "favorite" });
+User.belongsToMany(Design, { through: "favorite", as: "Favorites" });
+Design.belongsToMany(User, { through: "favorite", as: "Favorites" });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
