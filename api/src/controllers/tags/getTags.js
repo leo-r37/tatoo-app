@@ -2,7 +2,10 @@ const { Tag } = require("../../db.js");
 
 module.exports = async (req, res) => {
   try {
-    let response = await Tag.findAll();
+    const { name } = req.query;
+    let response = name
+      ? await Tag.findOne({ where: { name } })
+      : await Tag.findAll();
     res.send(response);
   } catch (error) {
     console.log(error);
