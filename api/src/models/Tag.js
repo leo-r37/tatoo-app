@@ -14,6 +14,7 @@ module.exports = (sequelize) => {
       },
       name: {
         type: DataTypes.STRING(15),
+        allowNull: false,
         unique: true,
         validate: {
           len: [1, 15],
