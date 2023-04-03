@@ -1,8 +1,9 @@
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 require("dotenv").config();
-const { PORT } = process.env;
 const mocker = require("./src/helpers/mocker.js");
+
+const PORT = process.env.PORT || 3001;
 
 // Syncing all the models at once.
 conn
@@ -23,5 +24,5 @@ conn
     server.listen(PORT, () => {
       console.log("Server:   🟢", "( port:", PORT, ")"); // eslint-disable-line no-console
     });
-  })
-  // .then(() => mocker());
+  });
+// .then(() => mocker());
