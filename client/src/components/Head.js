@@ -4,7 +4,7 @@ import React from "react";
 const Head = () => {
   return (
     <View style={s.container}>
-      <Text style={s.text}>Tatoo APP</Text>
+      <Text style={s.text}>APP</Text>
     </View>
   );
 };

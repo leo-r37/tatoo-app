@@ -24,5 +24,5 @@ conn
     server.listen(PORT, () => {
       console.log("Server:   🟢", "( port:", PORT, ")"); // eslint-disable-line no-console
     });
-  });
+  })
 // .then(() => mocker());
