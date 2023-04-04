@@ -1,7 +1,8 @@
-import { GET_DESIGNS } from "../actions";
+import { GET_DESIGNS, GET_DESIGN } from "../actions";
 
 const initialState = {
   designs: [],
+  current: {},
 };
 
 const designsReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const designsReducer = (state = initialState, action) => {
       return {
         ...state,
         designs: action.payload,
+      };
+    case GET_DESIGN:
+      return {
+        ...state,
+        current: action.payload,
       };
     default:
       return { ...state };

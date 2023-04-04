@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const GET_DESIGNS = "GET_DESIGNS";
+export const GET_DESIGN = "GET_DESIGN";
 
 export const getDesigns = () => {
   return async (dispatch) => {
@@ -9,8 +10,9 @@ export const getDesigns = () => {
   };
 };
 
-// export const getIngredients = () => async (dispatch) => {
-//     let response = await axios.get(`/ingredients`);
-//     return dispatch({ type: GET_INGREDIENTS, payload: response.data });
-    
-//   };
+export const getDesign = (id) => {
+  return async (dispatch) => {
+    const design = await axios.get(`http://192.168.1.10:3001/designs/${id}`);
+    return dispatch({ type: GET_DESIGN, payload: design.data });
+  };
+};
